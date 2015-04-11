@@ -30,6 +30,7 @@ gem 'rack-cors'
 gem 'grape-jbuilder'
 
 gem 'twilio-ruby'
+gem 'compropago'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

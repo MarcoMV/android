@@ -6,34 +6,31 @@ module API
     	format :json
 
     	resource :charges do
-    		desc 'verify phone'
     		params do
-    			requires :phone, type: String
+    			requires :payer, type: Integer
+          requires :amount, Integer
+          requires :weeks, Integer
     		end
-    		get 'send_verification' do
-    			user = User.create(phone: params[:phone], login_code: rand(1000..9999))
-    			twilio = TwilioWrapper.new
-    			twilio.send_message(user.phone,"El codigo de verificacion de Pagomatico es: #{user.login_code}")
-    		end
-
-    		params do
-    			requires :code, type: Integer
-    		end
-    		post 'verification_code' do
-    			authenticate!
-
-    			if @current_user.login_code == params[:code]
-    				@current_user.update(verification: true)
-
-    				"success"
-    			else
-    				"fail"
-    				@current_user == nil
-    			end
+    		post 'request_credit' do
+    			# usuario solicita crédito
     		end
 
+        params do
+          requires :charge, type: Integer
+          requires :code, type: Integer
+        end
+        get 'verify_charge' do
+          charge = Charge.find(params[:charge])
+          if charge.verification_code == params[:code]
+            charge.update(verified: true)
+
+            status 200
+            "success"
+          else
+            "fail"
+          end
+        end
     	end
-
     end
   end
 end
