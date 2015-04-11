@@ -11,15 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411064130) do
+ActiveRecord::Schema.define(version: 20150411070845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charges", force: true do |t|
+    t.decimal  "amount"
+    t.integer  "payer_id"
+    t.integer  "receiver_id"
+    t.integer  "plan_id"
+    t.string   "verification_code"
+    t.boolean  "verified"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "charges", ["payer_id"], name: "index_charges_on_payer_id", using: :btree
+  add_index "charges", ["plan_id"], name: "index_charges_on_plan_id", using: :btree
+  add_index "charges", ["receiver_id"], name: "index_charges_on_receiver_id", using: :btree
+
+  create_table "plans", force: true do |t|
+    t.integer  "weeks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "login_code"
+    t.integer  "roleable_id"
+    t.string   "roleable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
