@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Clientes Activos"
+        android:id="@+id/textClie"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/textClie"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/textClie">
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activos"
+                android:id="@+id/switch1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finiquitados"
+                android:id="@+id/switch2"
+                android:layout_below="@+id/textInfo"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textInfo"
+                android:layout_below="@+id/switch1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView2"
+                android:layout_below="@+id/switch2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
