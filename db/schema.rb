@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 20150411070845) do
     t.string   "name"
     t.string   "phone"
     t.string   "login_code"
-    t.integer  "roleable_id"
-    t.string   "roleable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
