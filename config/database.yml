@@ -6,10 +6,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-
+  host: localhost
+  pool: 20
+  username: ronda
+  password: ronda
 development:
   <<: *default
-  database: pagomatico_development
+  database: pago_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
