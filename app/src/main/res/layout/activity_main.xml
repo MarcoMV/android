@@ -7,31 +7,51 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="120dp"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/registro"
-        android:clickable="true"
-        android:layout_marginTop="152dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:text="Enviar"
         android:id="@+id/botonEnv"
-        android:layout_below="@+id/registro"
-        android:layout_alignLeft="@+id/registro"
-        android:layout_alignStart="@+id/registro"
-        android:layout_marginTop="92dp"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentLeft="false"
-        />
+        android:layout_marginBottom="116dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txt_logo"
+        android:background="@mipmap/completo"
+        android:gravity="center_vertical|right"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ingrese su numero"
+        android:id="@+id/textView"
+        android:layout_below="@+id/txt_logo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:width="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_above="@+id/registro" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/registro"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/botonEnv"
+        android:layout_alignStart="@+id/botonEnv"
+        android:gravity="center_horizontal|bottom"
+        android:textSize="15dp" />
 
 
 </RelativeLayout>

@@ -11,7 +11,9 @@
         android:layout_marginTop="132dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/checkSafe"
+        android:layout_alignStart="@+id/checkSafe" />
 
     <EditText
         android:layout_width="240dp"
@@ -22,17 +24,8 @@
         android:layout_below="@+id/Producto"
         android:layout_alignRight="@+id/Producto"
         android:layout_alignEnd="@+id/Producto"
-         />
-
-    <EditText
-        android:layout_width="240dp"
-        android:layout_height="60dp"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/Sem"
-        android:layout_below="@+id/Tel"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/textProducto"
+        android:layout_toEndOf="@+id/textProducto" />
 
     <EditText
         android:layout_width="240dp"
@@ -40,20 +33,22 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/Total"
-        android:layout_below="@+id/Sem"
+        android:linksClickable="false"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/textSem"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:linksClickable="false"
-         />
+        android:layout_toRightOf="@+id/textTotal"
+        android:layout_toEndOf="@+id/textTotal" />
 
     <CheckBox
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:text="Pago seguro"
         android:id="@+id/checkSafe"
-        android:layout_below="@+id/Total"
+        android:layout_above="@+id/enviarNext"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -69,21 +64,21 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Producto"
         android:id="@+id/textProducto"
+        android:singleLine="true"
         android:layout_above="@+id/Tel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:singleLine="true" />
+        android:layout_toLeftOf="@+id/Producto"
+        android:layout_toStartOf="@+id/Producto" />
 
-    <TextView
+    <EditText
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Tel"
         android:id="@+id/textTel"
         android:singleLine="true"
-        android:layout_above="@+id/Sem"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/textProducto"
+        android:layout_alignLeft="@+id/textProducto"
+        android:layout_alignStart="@+id/textProducto" />
 
     <TextView
         android:layout_width="140dp"
@@ -92,9 +87,9 @@
         android:text="Semanas"
         android:id="@+id/textSem"
         android:singleLine="true"
-        android:layout_below="@+id/Tel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/textTel"
+        android:layout_alignLeft="@+id/textTel"
+        android:layout_alignStart="@+id/textTel" />
 
     <TextView
         android:layout_width="140dp"
@@ -103,8 +98,30 @@
         android:text="Monto Total"
         android:id="@+id/textTotal"
         android:singleLine="true"
-        android:layout_above="@+id/checkSafe"
-        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/Total"
+        android:layout_alignLeft="@+id/textSem"
+        android:layout_alignStart="@+id/textSem" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:id="@+id/textView3"
+        android:background="@mipmap/completo"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/Producto"
+        android:layout_alignEnd="@+id/Producto"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_above="@+id/Total"
+        android:layout_alignRight="@+id/Tel"
+        android:layout_alignEnd="@+id/Tel"
+        android:layout_toRightOf="@+id/textSem"
+        android:layout_toEndOf="@+id/textSem" />
 
 </RelativeLayout>
